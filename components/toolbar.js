@@ -6,9 +6,10 @@ export const Toolbar = () => {
 
     return(
         <div className={styles.main}>
-            <div>Home</div>
-            <div>Feed</div>
-            <div>Twitter</div>
+            <div onClick={() => router.push('/')}>Home</div>
+            <div onClick={() => router.push('/feed/1')}>Feed</div>
+            <div onClick={() => router.push('/eom')}>Eom</div>
+            {/* <div onClick={() => window.location.href = 'https:://twitter.com'}>Twitter</div> */}
         </div>
     );
 };
