@@ -1,6 +1,15 @@
+import styles from '../../styles/Feed.module.css';
+
 export const Feed = ({pageNumber, articles}) => {
-    console.log(articles, pageNumber);
-    return (<>Hello World</>);
+    return (
+        <div className={styles.main}>
+            {articles.map((article,index) => (
+                <div key={index} className={styles.post}>
+                    <h1>{article.title}</h1>
+                </div>
+            ))}
+        </div>
+    );
 };
 
 export const getServerSideProps = async pageContext => {
@@ -16,7 +25,7 @@ export const getServerSideProps = async pageContext => {
     }
 
     const apiResponse = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=${pageNumber}` ,
+        `https://newsapi.org/v2/top-headlines?country=pl&pageSize=5&page=${pageNumber}` ,
         {
         headers: {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_NEWS_KEY}`,
