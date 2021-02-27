@@ -1,4 +1,5 @@
 export const Feed = ({pageNumber, articles}) => {
+    console.log(articles, pageNumber);
     return (<>Hello World</>);
 };
 
