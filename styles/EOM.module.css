@@ -7,11 +7,11 @@
     margin-top: 50px;
 }
 
-.employeeOfTheMonth {
+.author {
     text-align: center;
 }
 
-.employeeOfTheMonth img {
+.author img {
     width: 250px;
     border-radius: 100%;
 }

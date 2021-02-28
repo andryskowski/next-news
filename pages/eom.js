@@ -1,17 +1,17 @@
 import styles from '../styles/EOM.module.css';
 import {Toolbar} from '../components/toolbar';
 
-export const EOM = ({employee}) => {
+export const EOM = ({Author}) => {
     return(
         <div className='page-container'>
             <Toolbar></Toolbar>
             <div className={styles.main}>
-                <h1>Employee of the month </h1>
-                <div className={styles.employeeOfTheMonth}>
-                    <h3>{employee.name}</h3>
-                    <h6>{employee.position}</h6>
-                    <img src={employee.image}/>
-                    <p>{employee.description}</p>
+                <h1>Author </h1>
+                <div className={styles.author}>
+                    <h3>{Author.name}</h3>
+                    <h6>{Author.position}</h6>
+                    <img src={author.image}/>
+                    <p>{Author.description}</p>
                 </div>
             </div>
         </div>
@@ -20,13 +20,15 @@ export const EOM = ({employee}) => {
 
 export const getServerSideProps = async pageContext => {
     const apiResponse = await fetch(
-        `https://my-json-server.typicode.com/andryskowski/next-news/db`,
+        // https://my-json-server.typicode.com/andryskowski/next-news/db
+        //http://my-json-server.typicode.com/portexe/next-news/AuthorOfTheMonth
+        `https://my-json-server.typicode.com/andryskowski/next-news/Author`,
     );
-    const employee = await apiResponse.json();
+    const Author = await apiResponse.json();
 
     return {
         props: {
-            employee
+            Author
         }
     }
 };
