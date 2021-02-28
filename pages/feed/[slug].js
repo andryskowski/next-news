@@ -85,6 +85,7 @@ export const getServerSideProps = async pageContext => {
   }
 
   const apiResponse = await fetch(
+    // http://newsapi.org/v2/everything?q=tesla&from=2021-01-28&sortBy=publishedAt&apiKey=740ec6a9ac3f4a0dbf5d15c8f1d91b85
     `https://newsapi.org/v2/top-headlines?country=pl&pageSize=5&page=${pageNumber}`,
     {
       headers: {
